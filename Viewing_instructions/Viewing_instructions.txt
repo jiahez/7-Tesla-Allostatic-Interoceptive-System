@@ -1,6 +1,6 @@
 There are two types of connectivity map outputs, each with its own viewing methods.
 
-1. Surface maps. These are generated via the Freesurfer surface-based analysis pipeline and are in either left hemisphere (lh) or right hemisphere (rh) space. Before viewing, install Freesurfer (including its viewing programs such as tksurfer or Freeview). Then download the zipped standard subject (mni152.fnirt) and unzip it in your Freesurfer subjects directory. To view in tksurfer, you can run this:
+1. Surface maps. These are generated via the Freesurfer surface-based analysis pipeline and are in either left hemisphere (lh) or right hemisphere (rh) space. Before viewing, install Freesurfer (including its viewing programs such as tksurfer or Freeview). Then download the standard subject (mni152.fnirt) and put it in your Freesurfer subjects directory. To view in tksurfer, you can run this:
 tksurfer mni152.fnirt $hemi inflated -ov  $map.name
 
 2. Volume maps. These are subcortically masked maps (mni305) generated via the Freesurfer volume-based analysis pipeline and are in MNI space. These can be viewed in any standard volume-based viewing programs such as FSLeyes or Freeview.
