@@ -1,0 +1,150 @@
+Log file for reg-to-mni152
+Wed Oct 21 19:50:57 EDT 2009
+
+setenv SUBJECTS_DIR /homes/4/greve/subjects
+cd /autofs/homes/004/greve/flac/fb3pilot/objtask
+/homes/4/greve/bin/reg-to-mni152 --s mni152.fnirt
+
+Linux crash 2.6.18-128.7.1.el5 #1 SMP Mon Aug 24 08:21:56 EDT 2009 x86_64 x86_64 x86_64 GNU/Linux
+fslregister --mov /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz --s mni152.fnirt --reg /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat --dof 12
+
+Log file is /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat.fslregister.log
+
+Wed Oct 21 19:50:57 EDT 2009
+--mov /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz --s mni152.fnirt --reg /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat --dof 12
+$Id: fslregister,v 1.29 2009/07/31 22:22:46 greve Exp $
+crash
+Linux crash 2.6.18-128.7.1.el5 #1 SMP Mon Aug 24 08:21:56 EDT 2009 x86_64 x86_64 x86_64 GNU/Linux
+nIters 1
+--------------------------------------
+/autofs/homes/004/greve/flac/fb3pilot/objtask
+mri_convert /homes/4/greve/subjects/mni152.fnirt/mri/brainmask.mgz /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/refvol.fslregister.nii
+mri_convert /homes/4/greve/subjects/mni152.fnirt/mri/brainmask.mgz /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/refvol.fslregister.nii 
+$Id: mri_convert.c,v 1.164 2009/10/19 20:54:57 greve Exp $
+reading from /homes/4/greve/subjects/mni152.fnirt/mri/brainmask.mgz...
+TR=1000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+writing to /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/refvol.fslregister.nii...
+--------------------------------------
+/autofs/homes/004/greve/flac/fb3pilot/objtask
+mri_convert /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/movvol.fslregister.nii --frame 0
+mri_convert /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/movvol.fslregister.nii --frame 0 
+$Id: mri_convert.c,v 1.164 2009/10/19 20:54:57 greve Exp $
+reading from /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz...
+TR=1000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 1, 0)
+k_ras = (0, 0, 1)
+keeping frame 0
+writing to /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/movvol.fslregister.nii...
+/autofs/homes/004/greve/flac/fb3pilot/objtask
+tkregister2_cmdl --mov /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/movvol.fslregister.nii --reg /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/reg0.30495.dat --regheader --fslregout /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat.fsl.mat0 --s mni152.fnirt --noedit
+tkregister_tcl /space/crash/1/users/greve/freesurferx86/lib/tcl/tkregister2.tcl
+INFO: no target volume specified, assuming FreeSurfer orig volume.
+target  volume orig
+movable volume /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/movvol.fslregister.nii
+reg file       /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/reg0.30495.dat
+LoadVol        0
+ZeroCRAS       0
+$Id: tkregister2.c,v 1.109 2009/10/09 17:12:39 greve Exp $
+Diagnostic Level -1
+INFO: loading target /homes/4/greve/subjects/mni152.fnirt/mri/orig.mgz
+Ttarg: --------------------
+-1.000   0.000   0.000   128.000;
+ 0.000   0.000   1.000  -128.000;
+ 0.000  -1.000   0.000   128.000;
+ 0.000   0.000   0.000   1.000;
+INFO: loading movable /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/movvol.fslregister.nii
+Tmov: --------------------
+-2.000   0.000   0.000   91.000;
+ 0.000   0.000   2.000  -91.000;
+ 0.000  -2.000   0.000   109.000;
+ 0.000   0.000   0.000   1.000;
+mkheaderreg = 1, float2int = 0
+Computing reg from header (and possibly input matrix)
+---- Input registration matrix (computed) --------
+ 1.000   0.000   0.000   0.000;
+ 0.000   0.000   1.000   0.000;
+ 0.000  -1.000   0.000   0.000;
+ 0.000   0.000   0.000   1.000;
+---------------------------------------
+---- Input registration matrix --------
+ 1.000   0.000   0.000   0.000;
+ 0.000   0.000   1.000   0.000;
+ 0.000  -1.000   0.000   0.000;
+ 0.000   0.000   0.000   1.000;
+Determinant 1
+subject = mni152.fnirt
+RegMat ---------------------------
+ 1.000   0.000   0.000   0.000;
+ 0.000   0.000   1.000   0.000;
+ 0.000  -1.000   0.000   0.000;
+ 0.000   0.000   0.000   1.000;
+register: file /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/reg0.30495.dat written
+FSLOUTPUTTYPE NIFTI 
+tkreg2FSL: mov det = -8, ref det = -1
+Wed Oct 21 19:50:59 EDT 2009
+/autofs/homes/004/greve/flac/fb3pilot/objtask
+flirt -ref /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/refvol.fslregister.nii -in /usr/pubsw/packages/fsl/4.1.4/data/standard/tmp.fslregister.30495/movvol.fslregister.nii -bins 256 -omat /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat.fsl.mat -cost corratio -dof 12 -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -verbose 0 -schedule /space/crash/1/users/greve/freesurferx86/bin/flirt.newdefault.20080811.sch -init /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat.fsl.mat0
+tkregister2_cmdl --s mni152.fnirt --mov /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz --reg /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat --fslreg /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat.fsl.mat --noedit
+tkregister_tcl /space/crash/1/users/greve/freesurferx86/lib/tcl/tkregister2.tcl
+---- FSL registration matrix --------
+ 0.995   0.001  -0.000   37.348;
+-0.001  -0.005  -1.001   219.593;
+-0.001   0.997  -0.004   19.675;
+ 0.000   0.000   0.000   1.000;
+---------------------------------------
+INFO: no target volume specified, assuming FreeSurfer orig volume.
+target  volume orig
+movable volume /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz
+reg file       /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat
+LoadVol        0
+ZeroCRAS       0
+$Id: tkregister2.c,v 1.109 2009/10/09 17:12:39 greve Exp $
+Diagnostic Level -1
+INFO: loading target /homes/4/greve/subjects/mni152.fnirt/mri/orig.mgz
+Ttarg: --------------------
+-1.000   0.000   0.000   128.000;
+ 0.000   0.000   1.000  -128.000;
+ 0.000  -1.000   0.000   128.000;
+ 0.000   0.000   0.000   1.000;
+INFO: loading movable /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz
+Tmov: --------------------
+-2.000   0.000   0.000   91.000;
+ 0.000   0.000   2.000  -91.000;
+ 0.000  -2.000   0.000   109.000;
+ 0.000   0.000   0.000   1.000;
+mkheaderreg = 0, float2int = 0
+FSLOUTPUTTYPE NIFTI 
+fsl2TkReg: mov det = -8, ref det = -1
+---- Input registration matrix (computed) --------
+ 1.005   0.001  -0.000  -0.031;
+ 0.001  -0.005   0.999  -0.050;
+ 0.001  -1.003  -0.004  -0.160;
+ 0.000   0.000   0.000   1.000;
+---------------------------------------
+---- Input registration matrix --------
+ 1.005   0.001  -0.000  -0.031;
+ 0.001  -0.005   0.999  -0.050;
+ 0.001  -1.003  -0.004  -0.160;
+ 0.000   0.000   0.000   1.000;
+Determinant 1.00733
+subject = mni152.fnirt
+RegMat ---------------------------
+ 1.005   0.001  -0.000  -0.031;
+ 0.001  -0.005   0.999  -0.050;
+ 0.001  -1.003  -0.004  -0.160;
+ 0.000   0.000   0.000   1.000;
+register: file /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat written
+Cleaning up
+ 
+Started at Wed Oct 21 19:50:57 EDT 2009 
+Ended   at Wed Oct 21 19:51:49 EDT 2009
+ 
+fslregister Done
+ 
+To check results, run:
+tkregister2 --mov /usr/pubsw/packages/fsl/4.1.4/data/standard/MNI152_T1_2mm_brain.nii.gz --reg /homes/4/greve/subjects/mni152.fnirt/mri/transforms/reg.mni152.2mm.dat --surf orig
+ 

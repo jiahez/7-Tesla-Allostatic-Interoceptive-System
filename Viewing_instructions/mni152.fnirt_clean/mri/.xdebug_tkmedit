@@ -1,0 +1,10 @@
+tkmedit started: Mon Jun 22 18:41:07 2009
+
+	tkmedit.bin mni152.fnirt orig.mgz -aux brainmask.mgz 
+
+$Id: tkmedit.c,v 1.336 2009/02/03 16:21:35 fischl Exp $ $Name:  $
+Set user home dir to /autofs/space/crash_001/users/greve/subjects/mni152.fnirt/mri
+Set subject home dir to /homes/4/greve/subjects/mni152.fnirt
+Using interface file /space/crash/1/users/greve/freesurferx86/lib/tcl/tkmedit.tcl
+Tcl: Successfully parsed tkmedit.tcl
+Tcl: Successfully parsed tkm_functional.tcl

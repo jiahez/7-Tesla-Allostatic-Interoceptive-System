@@ -1,0 +1,1 @@
+mris_ca_label -aseg ../mri/aseg.mgz -seed 1234 mni152.fnirt lh ../surf/lh.sphere.reg /usr/local/freesurfer/dev/average/lh.atlas2005_simple.gcs ../label/lh.aparc.a2005s.annot

@@ -1,0 +1,13 @@
+------------------------------
+SUBJECT mni152.fnirt/xhemi
+START_TIME Tue Jan 14 19:16:21 EST 2014
+END_TIME Tue Jan 14 19:20:08 EST 2014
+RUNTIME_HOURS 0.063
+USER greve
+HOST compute-0-3
+PROCESSOR x86_64
+OS Linux
+UNAME Linux compute-0-3 2.6.32-358.23.2.el6.x86_64 #1 SMP Wed Oct 16 18:37:12 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+VERSION $Id: recon-all,v 1.466 2013/09/27 14:05:06 mreuter Exp $
+CMDPATH /autofs/space/tanha_002/users/greve/fsdev.build/bin/recon-all
+CMDARGS -sb mni152.fnirt/xhemi -talairach

@@ -1,0 +1,274 @@
+/autofs/space/tanha_002/users/greve/fsdev.build/bin/xhemireg
+--s mni152.fnirt
+$Id: xhemireg,v 1.25 2013/08/29 18:49:33 greve Exp $
+Tue Jan 14 19:20:47 EST 2014
+Linux compute-0-3 2.6.32-358.23.2.el6.x86_64 #1 SMP Wed Oct 16 18:37:12 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+/autofs/space/crash_001/users/greve/subjects/mni152.fnirt
+setenv SUBJECTS_DIR /homes/4/greve/subjects 
+Tue Jan 14 19:20:47 EST 2014
+mri_surf2surf --s mni152.fnirt --sval-xyz orig --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.orig --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat
+
+$Id: mri_surf2surf.c,v 1.98 2013/08/29 18:21:10 greve Exp $
+
+setenv SUBJECTS_DIR /homes/4/greve/subjects
+cd /autofs/space/crash_001/users/greve/subjects/mni152.fnirt
+mri_surf2surf --s mni152.fnirt --sval-xyz orig --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.orig --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat 
+
+sysname  Linux
+hostname compute-0-3
+machine  x86_64
+user     greve
+srcsubject = mni152.fnirt
+srcval     = (null)
+srctype    = 
+trgsubject = mni152.fnirt
+trgval     = /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.orig
+trgtype    = 
+srcsurfreg = sphere.reg
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /homes/4/greve/subjects/mni152.fnirt/surf/rh.sphere.reg
+Loading source data
+Reading surface file /homes/4/greve/subjects/mni152.fnirt/surf/rh.orig
+Applying linear registration transform
+-1.00000   0.00000   0.00000   1.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant of linear transform is negative, so reversing face order
+INFO: trgsubject = srcsubject
+Saving target data
+Reversing Face Order
+Tue Jan 14 19:20:53 EST 2014
+mri_surf2surf --s mni152.fnirt --sval-xyz white --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.white --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat
+
+$Id: mri_surf2surf.c,v 1.98 2013/08/29 18:21:10 greve Exp $
+
+setenv SUBJECTS_DIR /homes/4/greve/subjects
+cd /autofs/space/crash_001/users/greve/subjects/mni152.fnirt
+mri_surf2surf --s mni152.fnirt --sval-xyz white --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.white --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat 
+
+sysname  Linux
+hostname compute-0-3
+machine  x86_64
+user     greve
+srcsubject = mni152.fnirt
+srcval     = (null)
+srctype    = 
+trgsubject = mni152.fnirt
+trgval     = /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.white
+trgtype    = 
+srcsurfreg = sphere.reg
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /homes/4/greve/subjects/mni152.fnirt/surf/rh.sphere.reg
+Loading source data
+Reading surface file /homes/4/greve/subjects/mni152.fnirt/surf/rh.white
+Applying linear registration transform
+-1.00000   0.00000   0.00000   1.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant of linear transform is negative, so reversing face order
+INFO: trgsubject = srcsubject
+Saving target data
+Reversing Face Order
+Tue Jan 14 19:20:59 EST 2014
+mri_surf2surf --s mni152.fnirt --sval-xyz pial --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.pial --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat
+
+$Id: mri_surf2surf.c,v 1.98 2013/08/29 18:21:10 greve Exp $
+
+setenv SUBJECTS_DIR /homes/4/greve/subjects
+cd /autofs/space/crash_001/users/greve/subjects/mni152.fnirt
+mri_surf2surf --s mni152.fnirt --sval-xyz pial --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.pial --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat 
+
+sysname  Linux
+hostname compute-0-3
+machine  x86_64
+user     greve
+srcsubject = mni152.fnirt
+srcval     = (null)
+srctype    = 
+trgsubject = mni152.fnirt
+trgval     = /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.pial
+trgtype    = 
+srcsurfreg = sphere.reg
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /homes/4/greve/subjects/mni152.fnirt/surf/rh.sphere.reg
+Loading source data
+Reading surface file /homes/4/greve/subjects/mni152.fnirt/surf/rh.pial
+Applying linear registration transform
+-1.00000   0.00000   0.00000   1.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant of linear transform is negative, so reversing face order
+INFO: trgsubject = srcsubject
+Saving target data
+Reversing Face Order
+Tue Jan 14 19:21:05 EST 2014
+mri_surf2surf --s mni152.fnirt --sval-xyz smoothwm --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.smoothwm --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat
+
+$Id: mri_surf2surf.c,v 1.98 2013/08/29 18:21:10 greve Exp $
+
+setenv SUBJECTS_DIR /homes/4/greve/subjects
+cd /autofs/space/crash_001/users/greve/subjects/mni152.fnirt
+mri_surf2surf --s mni152.fnirt --sval-xyz smoothwm --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.smoothwm --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.register.dat 
+
+sysname  Linux
+hostname compute-0-3
+machine  x86_64
+user     greve
+srcsubject = mni152.fnirt
+srcval     = (null)
+srctype    = 
+trgsubject = mni152.fnirt
+trgval     = /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.smoothwm
+trgtype    = 
+srcsurfreg = sphere.reg
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /homes/4/greve/subjects/mni152.fnirt/surf/rh.sphere.reg
+Loading source data
+Reading surface file /homes/4/greve/subjects/mni152.fnirt/surf/rh.smoothwm
+Applying linear registration transform
+-1.00000   0.00000   0.00000   1.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant of linear transform is negative, so reversing face order
+INFO: trgsubject = srcsubject
+Saving target data
+Reversing Face Order
+Tue Jan 14 19:21:11 EST 2014
+mri_surf2surf --s mni152.fnirt --sval-xyz sphere --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.sphere --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.pure.register.dat
+
+$Id: mri_surf2surf.c,v 1.98 2013/08/29 18:21:10 greve Exp $
+
+setenv SUBJECTS_DIR /homes/4/greve/subjects
+cd /autofs/space/crash_001/users/greve/subjects/mni152.fnirt
+mri_surf2surf --s mni152.fnirt --sval-xyz sphere --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.sphere --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.pure.register.dat 
+
+sysname  Linux
+hostname compute-0-3
+machine  x86_64
+user     greve
+srcsubject = mni152.fnirt
+srcval     = (null)
+srctype    = 
+trgsubject = mni152.fnirt
+trgval     = /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.sphere
+trgtype    = 
+srcsurfreg = sphere.reg
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /homes/4/greve/subjects/mni152.fnirt/surf/rh.sphere.reg
+Loading source data
+Reading surface file /homes/4/greve/subjects/mni152.fnirt/surf/rh.sphere
+Applying linear registration transform
+-1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant of linear transform is negative, so reversing face order
+INFO: trgsubject = srcsubject
+Saving target data
+Reversing Face Order
+Tue Jan 14 19:21:17 EST 2014
+mri_surf2surf --s mni152.fnirt --sval-xyz inflated --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.inflated --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.pure.register.dat
+
+$Id: mri_surf2surf.c,v 1.98 2013/08/29 18:21:10 greve Exp $
+
+setenv SUBJECTS_DIR /homes/4/greve/subjects
+cd /autofs/space/crash_001/users/greve/subjects/mni152.fnirt
+mri_surf2surf --s mni152.fnirt --sval-xyz inflated --hemi rh --tval-xyz /homes/4/greve/subjects/mni152.fnirt/xhemi/mri/orig.mgz --tval /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.inflated --reg /homes/4/greve/subjects/mni152.fnirt/xhemi/lrrev.pure.register.dat 
+
+sysname  Linux
+hostname compute-0-3
+machine  x86_64
+user     greve
+srcsubject = mni152.fnirt
+srcval     = (null)
+srctype    = 
+trgsubject = mni152.fnirt
+trgval     = /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.inflated
+trgtype    = 
+srcsurfreg = sphere.reg
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /homes/4/greve/subjects/mni152.fnirt/surf/rh.sphere.reg
+Loading source data
+Reading surface file /homes/4/greve/subjects/mni152.fnirt/surf/rh.inflated
+Applying linear registration transform
+-1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Determinant of linear transform is negative, so reversing face order
+INFO: trgsubject = srcsubject
+Saving target data
+Reversing Face Order
+cp surf/rh.curv /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.curv
+cp surf/rh.sulc /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.sulc
+cp surf/rh.area /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.area
+cp surf/rh.volume /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.volume
+cp surf/rh.thickness /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.thickness
+cp surf/rh.inflated.H /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.inflated.H
+cp surf/rh.area.pial /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.area.pial
+cp surf/rh.area.mid /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.area.mid
+cp surf/rh.curv.pial /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.curv.pial
+cp surf/rh.inflated.K /homes/4/greve/subjects/mni152.fnirt/xhemi/surf/lh.inflated.K
+cp label/rh.aparc.annot /homes/4/greve/subjects/mni152.fnirt/xhemi/label/lh.aparc.annot
+done hemi rh
+
+Tue Jan 14 19:21:26 EST 2014
+xhemireg done

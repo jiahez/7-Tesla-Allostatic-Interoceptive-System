@@ -1,0 +1,109 @@
+Tue Jan 14 19:16:21 EST 2014
+/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/xhemi
+/autofs/space/tanha_002/users/greve/fsdev.build/bin/recon-all
+-sb mni152.fnirt/xhemi -talairach
+subjid mni152.fnirt/xhemi
+setenv SUBJECTS_DIR /autofs/space/crash_002/users/greve/space-greve-1/subjects
+FREESURFER_HOME /autofs/space/tanha_002/users/greve/fsdev.build
+Actual FREESURFER_HOME /autofs/space/tanha_002/users/greve/fsdev.build
+build-stamp.txt: freesurfer-x86_64-unknown-linux-gnu-dev5-20140107
+Linux compute-0-3 2.6.32-358.23.2.el6.x86_64 #1 SMP Wed Oct 16 18:37:12 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    10240 kbytes
+coredumpsize 0 kbytes
+memoryuse    unlimited
+vmemoryuse   7340032 kbytes
+descriptors  32768 
+memorylocked 64 kbytes
+maxproc      256699 
+
+             total       used       free     shared    buffers     cached
+Mem:      32877592    6119280   26758312          0     165920     332340
+-/+ buffers/cache:    5621020   27256572
+Swap:     67108856      75812   67033044
+
+########################################
+program versions used
+$Id: recon-all,v 1.466 2013/09/27 14:05:06 mreuter Exp $
+$Id: mri_motion_correct.fsl,v 1.14 2011/03/02 20:16:39 nicks Exp $
+mri_convert -all-info 
+ProgramName: mri_convert  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:21-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_convert.c,v 1.206 2013/11/12 03:15:51 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+FLIRT version 6.0
+$Id: talairach_avi,v 1.10 2012/07/16 15:54:03 nicks Exp $
+mri_convert --version 
+dev build (use --all-info flag for full version info)
+ProgramName: tkregister2_cmdl  ProgramArguments: --all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:22-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: tkregister2.c,v 1.126 2012/01/20 21:00:37 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+Program nu_correct, built from:
+Package MNI N3, version 1.10, compiled by nicks@minerva (x86_64-unknown-linux-gnu) on 2010-02-20 at 17:32:37
+ProgramName: mri_make_uchar  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:22-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_make_uchar.c,v 1.4 2011/03/02 00:04:14 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_normalize  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:23-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_normalize.c,v 1.80 2012/10/16 21:38:35 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_watershed  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:23-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_watershed.cpp,v 1.97 2011/11/08 22:17:40 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_gcut  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:24-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_gcut.cpp,v 1.14 2011/03/02 00:04:16 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_segment  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:24-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_segment.c,v 1.41 2011/08/04 19:39:41 fischl Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_label2label  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:25-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_label2label.c,v 1.46 2013/04/16 18:30:15 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+
+
+ ======= NUMBER OF OPENMP THREADS = 1 ======= 
+ProgramName: mri_em_register  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:25-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_em_register.c,v 1.98 2013/02/06 22:51:40 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_ca_normalize  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:26-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_ca_normalize.c,v 1.62 2012/05/21 15:15:02 fischl Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_ca_register  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:26-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_ca_register.c,v 1.87 2013/11/14 16:15:12 fischl Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_ca_label  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:27-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_ca_label.c,v 1.100 2013/05/31 21:21:59 fischl Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_pretess  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:27-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_pretess.c,v 1.22 2013/08/30 18:12:25 mreuter Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_fill  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:28-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_fill.c,v 1.119 2011/10/25 14:09:58 fischl Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_tessellate  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:28-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_tessellate.c,v 1.37 2013/09/06 15:25:51 fischl Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_concatenate_lta  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:28-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_concatenate_lta.c,v 1.10 2011/03/16 21:23:48 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_normalize_tp2  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:29-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_normalize_tp2.c,v 1.8 2011/03/02 00:04:23 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_smooth  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:29-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_smooth.c,v 1.28 2011/03/02 00:04:34 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_inflate  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:30-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_inflate.c,v 1.44 2012/01/05 18:36:17 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_curvature  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:30-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_curvature.c,v 1.31 2011/03/02 00:04:30 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_sphere  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:31-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_sphere.c,v 1.57 2011/03/02 00:04:34 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_fix_topology  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:32-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_fix_topology.c,v 1.48 2011/03/02 00:04:32 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_topo_fixer  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:32-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_topo_fixer.cpp,v 1.29 2011/03/02 00:04:34 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_ca_label  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:33-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_ca_label.c,v 1.36 2013/10/28 20:41:30 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_euler_number  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:34-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_euler_number.c,v 1.10 2013/01/14 22:39:14 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_make_surfaces  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:34-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_make_surfaces.c,v 1.145 2013/05/14 16:17:45 fischl Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_register  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:34-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_register.c,v 1.61 2013/01/15 17:19:03 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_volmask  ProgramArguments: --all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:35-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_volmask.cpp,v 1.25 2011/03/02 00:04:34 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_anatomical_stats  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:36-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_anatomical_stats.c,v 1.73 2013/05/28 19:46:31 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mrisp_paint  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:36-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mrisp_paint.c,v 1.11 2011/03/02 00:04:35 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_curvature_stats  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:37-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_curvature_stats.c,v 1.64 2011/03/02 00:04:30 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mris_calc  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:38-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mris_calc.c,v 1.51 2013/01/31 15:17:09 rudolph Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+$Id: mri_robust_register.cpp,v 1.71 2013/09/20 14:27:34 mreuter Exp $
+
+ProgramName: mri_robust_register  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:38-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_robust_register.cpp,v 1.71 2013/09/20 14:27:34 mreuter Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+$Id: mri_robust_template.cpp,v 1.48 2013/05/21 18:03:15 mreuter Exp $
+
+ProgramName: mri_robust_template  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:39-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_robust_template.cpp,v 1.48 2013/05/21 18:03:15 mreuter Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_and  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:40-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_and.c,v 1.4 2011/03/02 00:04:13 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_or  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:41-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_or.c,v 1.5 2013/03/20 15:03:29 lzollei Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_fuse_segmentations  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:41-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_fuse_segmentations.c,v 1.8 2011/03/02 00:04:15 nicks Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+ProgramName: mri_segstats  ProgramArguments: -all-info  ProgramVersion: $Name:  $  TimeStamp: 2014/01/15-00:16:42-GMT  BuildTimeStamp: Jan  7 2014 11:45:34  CVS: $Id: mri_segstats.c,v 1.103 2013/11/21 22:46:21 greve Exp $  User: greve  Machine: compute-0-3  Platform: Linux  PlatformVersion: 2.6.32-358.23.2.el6.x86_64  CompilerName: GCC  CompilerVersion: 40400 
+#######################################
+GCADIR /autofs/space/tanha_002/users/greve/fsdev.build/average
+GCA RB_all_2008-03-26.gca
+GCASkull RB_all_withskull_2008-03-26.gca
+AvgCurvTif average.curvature.filled.buckner40.tif
+GCSDIR /autofs/space/tanha_002/users/greve/fsdev.build/average
+GCS curvature.buckner40.filled.desikan_killiany.2010-03-25.gcs
+#######################################
+#--------------------------------------------
+#@# Talairach Tue Jan 14 19:16:42 EST 2014
+/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/xhemi/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+
+ talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+
+ cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+
+#------------------------------------------
+
+Started at Tue Jan 14 19:16:21 EST 2014 
+Ended   at Tue Jan 14 19:20:08 EST 2014
+#@#%# recon-all-run-time-hours 0.063
+recon-all -s mni152.fnirt/xhemi finished without error at Tue Jan 14 19:20:08 EST 2014

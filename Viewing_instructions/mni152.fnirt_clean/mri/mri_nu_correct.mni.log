@@ -1,0 +1,190 @@
+/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/mri
+/usr/local/freesurfer/dev/bin/mri_nu_correct.mni
+--i orig.mgz --o nu.mgz --n 2
+nIters 2
+$Id: mri_nu_correct.mni,v 1.10 2009/05/04 16:15:46 nicks Exp $
+Linux node0404 2.6.9-42.0.3.ELsmp #1 SMP Fri Oct 6 06:28:26 CDT 2006 x86_64 x86_64 x86_64 GNU/Linux
+Mon Jun 22 12:42:05 EDT 2009
+Program nu_correct, built from:
+Package MNI N3, version 1.10, compiled by nicks@minerva (x86_64-unknown-linux-gnu) on 2005-11-15 at 20:37:35
+tmpdir is ./tmp.mri_nu_correct.mni.15507
+/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/mri
+mri_convert orig.mgz ./tmp.mri_nu_correct.mni.15507/nu0.mnc
+mri_convert orig.mgz ./tmp.mri_nu_correct.mni.15507/nu0.mnc 
+$Id: mri_convert.c,v 1.158 2009/05/15 18:32:34 nicks Exp $
+reading from orig.mgz...
+TR=1000.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+writing to ./tmp.mri_nu_correct.mni.15507/nu0.mnc...
+ 
+--------------------------------------------------------
+Iteration 1 Mon Jun 22 12:42:11 EDT 2009
+nu_correct -clobber ./tmp.mri_nu_correct.mni.15507/nu0.mnc ./tmp.mri_nu_correct.mni.15507/nu1.mnc -tmpdir ./tmp.mri_nu_correct.mni.15507/0/
+[greve@node0404:/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/mri/] [2009-06-22 12:42:12] running:
+  /usr/pubsw/packages/mni/current/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.15507/0/ ./tmp.mri_nu_correct.mni.15507/nu0.mnc ./tmp.mri_nu_correct.mni.15507/nu1.imp
+
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Number of iterations: 27 
+CV of field change: 0.000925772
+[greve@node0404:/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/mri/] [2009-06-22 12:42:46] running:
+  /usr/pubsw/packages/mni/current/bin/make_template -quiet -shrink 3 ./tmp.mri_nu_correct.mni.15507/nu0.mnc ./tmp.mri_nu_correct.mni.15507/0//template.mnc
+
+Transforming slices:......................................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Transforming slices:................................................................................................................................................................................................................................................................Done
+ 
+ 
+--------------------------------------------------------
+Iteration 2 Mon Jun 22 12:42:51 EDT 2009
+nu_correct -clobber ./tmp.mri_nu_correct.mni.15507/nu1.mnc ./tmp.mri_nu_correct.mni.15507/nu2.mnc -tmpdir ./tmp.mri_nu_correct.mni.15507/1/
+[greve@node0404:/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/mri/] [2009-06-22 12:42:52] running:
+  /usr/pubsw/packages/mni/current/bin/nu_estimate_np_and_em -parzen -log -sharpen 0.15 0.01 -iterations 50 -stop 0.001 -shrink 4 -auto_mask -nonotify -b_spline 1 -distance 200 -quiet -execute -clobber -nokeeptmp -tmpdir ./tmp.mri_nu_correct.mni.15507/1/ ./tmp.mri_nu_correct.mni.15507/nu1.mnc ./tmp.mri_nu_correct.mni.15507/nu2.imp
+
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Processing:.................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Number of iterations: 13 
+CV of field change: 0.000937279
+[greve@node0404:/autofs/space/crash_001/users/greve/subjects/mni152.fnirt/mri/] [2009-06-22 12:43:09] running:
+  /usr/pubsw/packages/mni/current/bin/make_template -quiet -shrink 3 ./tmp.mri_nu_correct.mni.15507/nu1.mnc ./tmp.mri_nu_correct.mni.15507/1//template.mnc
+
+Transforming slices:......................................................................................Done
+Not implemented yet in cache_volume_range_has_changed()
+Not implemented yet in cache_volume_range_has_changed()
+Transforming slices:................................................................................................................................................................................................................................................................Done
+ 
+ 
+ 
+mri_convert ./tmp.mri_nu_correct.mni.15507/nu2.mnc nu.mgz --like orig.mgz
+mri_convert ./tmp.mri_nu_correct.mni.15507/nu2.mnc nu.mgz --like orig.mgz 
+$Id: mri_convert.c,v 1.158 2009/05/15 18:32:34 nicks Exp $
+reading from ./tmp.mri_nu_correct.mni.15507/nu2.mnc...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+writing to nu.mgz...
+ 
+ 
+Mon Jun 22 12:43:24 EDT 2009
+mri_nu_correct.mni done

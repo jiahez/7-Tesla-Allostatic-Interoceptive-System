@@ -1,0 +1,10 @@
+------------------------------
+SUBJECT mni152.fnirt
+DATE Tue Jun 23 20:03:48 EDT 2009
+USER greve
+HOST node0404
+PROCESSOR x86_64
+OS Linux
+Linux node0404 2.6.9-42.0.3.ELsmp #1 SMP Fri Oct 6 06:28:26 CDT 2006 x86_64 x86_64 x86_64 GNU/Linux
+$Id: recon-all,v 1.221 2009/06/18 20:26:28 nicks Exp $
+/usr/local/freesurfer/dev/bin/recon-all

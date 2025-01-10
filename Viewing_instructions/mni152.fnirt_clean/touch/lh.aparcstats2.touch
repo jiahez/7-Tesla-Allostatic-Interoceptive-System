@@ -1,0 +1,1 @@
+mris_anatomical_stats -mgz -f ../stats/lh.aparc.a2005s.stats -b -a ../label/lh.aparc.a2005s.annot -c ../label/aparc.annot.a2005s.ctab mni152.fnirt lh
