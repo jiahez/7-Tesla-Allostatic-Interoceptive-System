@@ -1,15 +1,13 @@
-set n=25 # change according to actual sample size
-
-cd /cluster/iaslab/FSMAP/
-
-#setenv SUBJECTS_DIR /cluster/iaslab/FSMAP/recon
+#!/ bin/csh
+cd $STUDY_DIR
+setenv SUBJECTS_DIR $DATA_DIR/recon
 
 ###################################################################################################################################################################
 # RUN REORIENTATION AND CHECK BEFORE PREPROCESSING
 foreach ind (`seq 1 1 $n`)
 
-	set subj=`awk NR==$ind /cluster/iaslab/FSMAP/rsfmri/subj_g2.lst` # change subj list
-	set rest_dir='/cluster/iaslab/FSMAP/'$subj'/rest'
+	set subj=`awk NR==$ind $DATA_DIR/rsfmri/subj_g2.lst` # change subj list
+	set rest_dir='$DATA_DIR/'$subj'/rest'
 	echo $subj
 
 	set first=`awk -v line=$ind -v col=1 'NR == '$ind' { print $1 }' < rsfmri/restingstate_scan_number_g2.lst` 

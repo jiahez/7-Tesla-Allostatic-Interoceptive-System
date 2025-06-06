@@ -1,8 +1,7 @@
-set n=25# change according to actual sample size
+#!/ bin/csh
+cd $STUDY_DIR
 
-cd /cluster/iaslab/FSMAP/
-
-# setenv SUBJECTS_DIR /cluster/iaslab/FSMAP/recon
+# setenv SUBJECTS_DIR $DATA_DIR/recon
 
 ##################################################################################################################################################################
 # CONFIGURATION SETUP (MANUALLY MODIFY AFTERWARDS)
@@ -18,11 +17,11 @@ cd /cluster/iaslab/FSMAP/
 # PREPROCESSING
 foreach ind (`seq 1 1 $n`)
 
-	set subj=`awk NR==$ind /cluster/iaslab/FSMAP/rsfmri/subj_g2.lst` # change subj list
-	set rest_dir='/cluster/iaslab/FSMAP/'$subj'/rest/'
+	set subj=`awk NR==$ind $DATA_DIR/rsfmri/subj_g2.lst` # change subj list
+	set rest_dir='$DATA_DIR/'$subj'/rest/'
 
-	touch /cluster/iaslab/FSMAP/$subj/subjectname
-	echo "$subj"> /cluster/iaslab/FSMAP/$subj/subjectname
+	touch $DATA_DIR/$subj/subjectname
+	echo "$subj"> $DATA_DIR/$subj/subjectname
 
 	set first=`awk -v line=$ind -v col=1 'NR == '$ind' { print $1 }' < rsfmri/restingstate_scan_number_g2.lst`
 	set second=`awk -v line=$ind -v col=2 'NR == '$ind' { print $2 }' < rsfmri/restingstate_scan_number_g2.lst`
@@ -46,9 +45,9 @@ foreach ind (`seq 1 1 $n`)
 		fslroi  $run_dir/${fname}  $run_dir/${fname}_slab3 0 -1 0 -1 82 41 0 -1
 
 		## PERFORM SLICE TIMING FOR EACH SLAB SEPARATELY
-		slicetimer -i $run_dir/${fname}_slab1 -o $run_dir/${fname}_slab1_st --ocustom=/cluster/iaslab/FSMAP/scripts/sliceorder_123slsms3_asc_inter.txt  -v -r $TR
-		slicetimer -i $run_dir/${fname}_slab2 -o $run_dir/${fname}_slab2_st --ocustom=/cluster/iaslab/FSMAP/scripts/sliceorder_123slsms3_asc_inter.txt  -v -r $TR
-		slicetimer -i $run_dir/${fname}_slab3 -o $run_dir/${fname}_slab3_st --ocustom=/cluster/iaslab/FSMAP/scripts/sliceorder_123slsms3_asc_inter.txt  -v -r $TR
+		slicetimer -i $run_dir/${fname}_slab1 -o $run_dir/${fname}_slab1_st --ocustom=$DATA_DIR/scripts/sliceorder_123slsms3_asc_inter.txt  -v -r $TR
+		slicetimer -i $run_dir/${fname}_slab2 -o $run_dir/${fname}_slab2_st --ocustom=$DATA_DIR/scripts/sliceorder_123slsms3_asc_inter.txt  -v -r $TR
+		slicetimer -i $run_dir/${fname}_slab3 -o $run_dir/${fname}_slab3_st --ocustom=$DATA_DIR/scripts/sliceorder_123slsms3_asc_inter.txt  -v -r $TR
 
 		## STICH 3 SLABS BACK TOGETHER
 		fslmerge -z $run_dir/${fname}_st  $run_dir/${fname}_slab1_st $run_dir/${fname}_slab2_st $run_dir/${fname}_slab3_st
@@ -98,17 +97,17 @@ foreach ind (`seq 1 1 $n`)
 		#rm $subj/rest$set/001/fmcpr.mcdat
 		#rm $subj/rest$set/001/fmcpr.nii.gz.mclog
 		#rm $subj/rest$set/001/fmcpr.mat.aff12.1D
-		ln -s /cluster/iaslab/FSMAP/$subj/rest$set/001/fmc.nii.gz /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.nii.gz
-		ln -s /cluster/iaslab/FSMAP/$subj/rest$set/001/fmc.mcdat /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.mcdat
-		ln -s /cluster/iaslab/FSMAP/$subj/rest$set/001/fmc.nii.gz.mclog /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.nii.gz.mclog
-		ln -s /cluster/iaslab/FSMAP/$subj/rest$set/001/fmc.mat.aff12.1D /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.mat.aff12.1D
+		ln -s $DATA_DIR/$subj/rest$set/001/fmc.nii.gz $DATA_DIR/$subj/rest$set/001/fmcpr.nii.gz
+		ln -s $DATA_DIR/$subj/rest$set/001/fmc.mcdat $DATA_DIR/$subj/rest$set/001/fmcpr.mcdat
+		ln -s $DATA_DIR/$subj/rest$set/001/fmc.nii.gz.mclog $DATA_DIR/$subj/rest$set/001/fmcpr.nii.gz.mclog
+		ln -s $DATA_DIR/$subj/rest$set/001/fmc.mat.aff12.1D $DATA_DIR/$subj/rest$set/001/fmcpr.mat.aff12.1D
 
 		# THIS IS DONE TO CREATE A PREPROC-SESS LOG TO TRICK FREESURFER INTO THINKING PREPROC IS DONE UP TO NORMALIZATION
 		preproc-sess -s $subj -fsd rest$set -fwhm 0 -per-run -update -surface mni152.fnirt lhrh -mni305-1mm
-		ln -s /cluster/iaslab/FSMAP/$subj/rest$set/001/fmc.nii.gz /cluster/iaslab/FSMAP/$subj/rest$set/001/f_st_mc.nii.gz
-		mv /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.lh.nii.gz /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.lh_orig.nii.gz
-		mv /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.rh.nii.gz /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.rh_orig.nii.gz
-		mv /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.sm0.mni305.1mm.nii.gz /cluster/iaslab/FSMAP/$subj/rest$set/001/fmcpr.sm0.mni305.1mm_orig.nii.gz
+		ln -s $DATA_DIR/$subj/rest$set/001/fmc.nii.gz $DATA_DIR/$subj/rest$set/001/f_st_mc.nii.gz
+		mv $DATA_DIR/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.lh.nii.gz $DATA_DIR/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.lh_orig.nii.gz
+		mv $DATA_DIR/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.rh.nii.gz $DATA_DIR/$subj/rest$set/001/fmcpr.sm0.mni152.fnirt.rh_orig.nii.gz
+		mv $DATA_DIR/$subj/rest$set/001/fmcpr.sm0.mni305.1mm.nii.gz $DATA_DIR/$subj/rest$set/001/fmcpr.sm0.mni305.1mm_orig.nii.gz
 
 		fcseed-sess -s $subj -cfg rsfmri/vcsf${set}_lat_ventricle.config -overwrite #add 5vcsf and aqueduct
 		fcseed-sess -s $subj -cfg rsfmri/vcsf${set}_inf_lat_ventricle.config -overwrite
@@ -130,8 +129,8 @@ foreach ind (`seq 1 1 $n`)
 
 # ssh icepuff1
 # source /usr/local/freesurfer/nmr-stable60-env
-# setenv TMPDIR /cluster/iaslab/FSMAP/tmpdir
-# setenv SUBJECTS_DIR /cluster/iaslab/FSMAP/recon
+# setenv TMPDIR $DATA_DIR/tmpdir
+# setenv SUBJECTS_DIR $DATA_DIR/recon
 # matlab.new -nodisplay -nodesktop -nojvm
 ## CHECK IF THE RIGHT FS VERSION WAS LOADED:
 # which load_nifti
@@ -149,7 +148,7 @@ set lpf=0.08
 
 foreach ind (`seq 1 1 $n`)
 
-	set subj=`awk NR==$ind /cluster/iaslab/FSMAP/rsfmri/subj_g2.lst` # change subj list
+	set subj=`awk NR==$ind $DATA_DIR/rsfmri/subj_g2.lst` # change subj list
 
 	foreach set (1 2)
 		3dFourier -prefix $subj/rest$set/001/f_st_mc_regout_hp.nii.gz -highpass $hpf $subj/rest$set/001/f_st_mc_regout.nii.gz
@@ -159,11 +158,11 @@ foreach ind (`seq 1 1 $n`)
 
 end
 
-## NORMALIZATION DONE EXTERNAL TO THIS SCRIPT: 5.preproc_normalization_g2.sh (requires computation of the transformation matrices by Marta first, which are deposited to /cluster/iaslab/FSMAP/scriptsMB/trasformT1epi2MNI_2ndcohort/; run this with full memory capacity on launchpad!) ##
+## NORMALIZATION DONE EXTERNAL TO THIS SCRIPT: 5.preproc_normalization_g2.sh (requires computation of the transformation matrices by Marta first, which are deposited to $DATA_DIR/scriptsMB/trasformT1epi2MNI_2ndcohort/; run this with full memory capacity on launchpad!) ##
 
 foreach ind (`seq 1 1 $n`)
 
-	set subj=`awk NR==$ind /cluster/iaslab/FSMAP/rsfmri/subj_g2.lst` # change subj list
+	set subj=`awk NR==$ind $DATA_DIR/rsfmri/subj_g2.lst` # change subj list
 
 	foreach set (1 2)
 	
@@ -210,7 +209,7 @@ end
 ## ADDED STEPS FOR MARTA TO MATCH FINAL OUTPUT WITH MNI ORIENTATION AND DIMENSIONS ##
 foreach ind (`seq 1 1 25`)
 
-	set subj=`awk NR==$ind /cluster/iaslab/FSMAP/rsfmri/subj_g2.lst` # change subj list
+	set subj=`awk NR==$ind $DATA_DIR/rsfmri/subj_g2.lst` # change subj list
 	
 	fslswapdim $subj/rest1_1.25mm/001/fmcpr.sm0.mni305.1mm.nii.gz x z -y $subj/rest1_1.25mm/001/fmcpr.sm0.mni305.1mm_LAS.nii.gz
 
