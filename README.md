@@ -18,12 +18,6 @@ Raw and preprocessed data are available: https://openneuro.org/datasets/ds005747
 - Raw data are in BIDS format
 - Preprocessed data (in derivatives/preprocessed) are outputs of step 1.preprocessing
 
-Scripts were tested and run on Linux system equipped with SLURM computing. Prerequisites for running analysis scripts include:
-1. MATALB
-2. SPM12
-3. FSL
-4. Freesurfer
-
 Brief description of scripts
 1. preprocessing: 
 2. first_level: 
@@ -31,7 +25,13 @@ Brief description of scripts
 4. bootstrapping:
 5. kmeans_clustering:
 
+Scripts were tested and run on Linux system equipped with SLURM computing. Prerequisites for running analysis scripts include:
+1. MATALB
+2. SPM12
+3. FSL
+4. Freesurfer 6.0.0 or later, and Freesurfer dev
+5. AFNI
+
 To replicate the results in the manuscript using the scripts, please 
-1. Set up study directory: set STUDY_DIR = /path/to/study/directory
-2. Download raw BIDS data (sub-XXX) into $STUDY_DIR/rawdata
-3. Download scripts into $STUDY_DIR/scripts
+1. Download raw BIDS data (sub-XXX) and participants.tsv into $STUDY_DIR/rawdata
+2. Download scripts into $STUDY_DIR/scripts

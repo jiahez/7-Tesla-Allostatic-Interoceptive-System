@@ -15,18 +15,7 @@ cd $STUDY_DIR
 
 
 # PREPROCESSING
-foreach ind (`seq 1 1 $n`)
-
-	set subj=`awk NR==$ind $DATA_DIR/rsfmri/subj_g2.lst` # change subj list
-	set rest_dir='$DATA_DIR/'$subj'/rest/'
-
-	touch $DATA_DIR/$subj/subjectname
-	echo "$subj"> $DATA_DIR/$subj/subjectname
-
-	set first=`awk -v line=$ind -v col=1 'NR == '$ind' { print $1 }' < rsfmri/restingstate_scan_number_g2.lst`
-	set second=`awk -v line=$ind -v col=2 'NR == '$ind' { print $2 }' < rsfmri/restingstate_scan_number_g2.lst`
-	set third=`awk -v line=$ind -v col=3 'NR == '$ind' {print $3 }' < rsfmri/restingstate_scan_number_g2.lst`
-	set t1=`awk NR==$ind rsfmri/T1_scan_number_g2.lst`
+foreach subj (`awk '{print $1}' participants.tsv`)
 
 	# SCAN NAME
 	set fname=f_reorient
@@ -35,9 +24,9 @@ foreach ind (`seq 1 1 $n`)
 	set TR=2.34 
 
 	## SLICE TIMING CORRECTION
-	foreach run ($first $second $third)
+	foreach run (1 2 3)
 
-		set run_dir=$rest_dir$run
+		slicetimer -i derivatives/$subj/00${run}/f_reorient -o derivatives/$subj/00${run}/f_reorient_st --ocustom=scripts/1.preprocessing/sliceorder_123slsms3_asc_inter.txt -v -r $TR
 
 		## SPLIT THE TIMESERIES IN 3 SLABS
 		fslroi  $run_dir/${fname}  $run_dir/${fname}_slab1 0 -1 0 -1 0 41 0 -1
