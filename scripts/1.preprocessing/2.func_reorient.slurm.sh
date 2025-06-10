@@ -10,8 +10,11 @@
 
 #############################################
 freesurfer_version="X.X.X"
+export FREESURFER_HOME=/PATH/TO/FREESURFER
+source "$FREESURFER_HOME/SetUpFreeSurfer.sh"
 #############################################
 
+# set Freesurfer subjects directory
 export SUBJECTS_DIR="$STUDY_DIR/derivatives/Freesurfer_${freesurfer_version}"
 
 # Extract subject ID from participants.tsv

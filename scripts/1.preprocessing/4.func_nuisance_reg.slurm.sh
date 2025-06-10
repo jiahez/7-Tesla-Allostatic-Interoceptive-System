@@ -10,10 +10,20 @@
 
 #############################################
 freesurfer_version="X.X.X"
-TR=2.34
+export FREESURFER_HOME=/PATH/TO/FREESURFER
+source "$FREESURFER_HOME/SetUpFreeSurfer.sh"
 #############################################
 
+# set Freesurfer subjects directory
 export SUBJECTS_DIR="$STUDY_DIR/derivatives/Freesurfer_${freesurfer_version}"
+
+# CONFIGURATION SETUP (MANUALLY MODIFY AFTERWARDS)
+fcseed-config -vcsf -fcname vcsf.dat -fsd rest$set -pca -cfg rsfmri/vcsf1_1.25mm.config
+fcseed-config -vcsf -fcname vcsf.dat -fsd rest2 -pca -cfg rsfmri/vcsf2.config # THEN GO INTO FILE AND ADD 14 and 15 TO segidlists
+fcseed-config -wm -fcname wm.dat -fsd rest1 -pca -cfg rsfmri/wm1.config
+fcseed-config -wm -fcname wm.dat -fsd rest2 -pca -cfg rsfmri/wm2.config
+fcseed-config -vcsf -fcname vcsf_mean.dat -fsd rest1 -mean -cfg rsfmri/vcsf1_mean.config
+fcseed-config -wm -fcname wm_mean.dat -fsd rest1 -mean -cfg rsfmri/wm1_mean.config
 
 # Extract subject ID from participants.tsv
 subj=$(sed -n -E "$((SLURM_ARRAY_TASK_ID + 1))s/sub-(\S*)\>.*/\1/p" "$STUDY_DIR/rawdata/participants.tsv")
@@ -32,12 +42,12 @@ mv $STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni152.fnirt.rh.nii.gz $STUDY
 mv $STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni305.1mm.nii.gz $STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni305.1mm_orig.nii.gz
 
 # extract nuisance regressors
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/preproc_configs/vcsf${set}_lat_ventricle.config -overwrite #add 5vcsf and aqueduct
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/preproc_configs/vcsf${set}_inf_lat_ventricle.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/preproc_configs/vcsf${set}_choroid_plexus.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/preproc_configs/vcsf${set}_3rd_ventricle.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/preproc_configs/vcsf${set}_4th_ventricle.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/preproc_configs/wm${set}_mean.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_lat_ventricle.config -overwrite 
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_inf_lat_ventricle.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_choroid_plexus.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_3rd_ventricle.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_4th_ventricle.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/wm_mean.config -overwrite
 fslmeants -i $subj/rest/001/fmcpr.nii.gz -o $subj/rest/001/aqueduct.dat -m $subj/aqueduct_mask_5vx.nii.gz
 
 
