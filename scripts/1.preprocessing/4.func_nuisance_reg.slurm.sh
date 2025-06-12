@@ -17,14 +17,6 @@ source "$FREESURFER_HOME/SetUpFreeSurfer.sh"
 # set Freesurfer subjects directory
 export SUBJECTS_DIR="$STUDY_DIR/derivatives/Freesurfer_${freesurfer_version}"
 
-# CONFIGURATION SETUP (MANUALLY MODIFY AFTERWARDS)
-fcseed-config -vcsf -fcname vcsf.dat -fsd rest$set -pca -cfg rsfmri/vcsf1_1.25mm.config
-fcseed-config -vcsf -fcname vcsf.dat -fsd rest2 -pca -cfg rsfmri/vcsf2.config # THEN GO INTO FILE AND ADD 14 and 15 TO segidlists
-fcseed-config -wm -fcname wm.dat -fsd rest1 -pca -cfg rsfmri/wm1.config
-fcseed-config -wm -fcname wm.dat -fsd rest2 -pca -cfg rsfmri/wm2.config
-fcseed-config -vcsf -fcname vcsf_mean.dat -fsd rest1 -mean -cfg rsfmri/vcsf1_mean.config
-fcseed-config -wm -fcname wm_mean.dat -fsd rest1 -mean -cfg rsfmri/wm1_mean.config
-
 # Extract subject ID from participants.tsv
 subj=$(sed -n -E "$((SLURM_ARRAY_TASK_ID + 1))s/sub-(\S*)\>.*/\1/p" "$STUDY_DIR/rawdata/participants.tsv")
 
@@ -50,14 +42,31 @@ fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_4th_ventricle.con
 fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/wm_mean.config -overwrite
 fslmeants -i $subj/rest/001/fmcpr.nii.gz -o $subj/rest/001/aqueduct.dat -m $subj/aqueduct_mask_5vx.nii.gz
 
+# set temp directory
+export TMPDIR=$DATA_DIR/tmpdir
 
-# source /usr/local/freesurfer/nmr-stable60-env
-# setenv TMPDIR $DATA_DIR/tmpdir
-# setenv SUBJECTS_DIR $DATA_DIR/recon
-# matlab.new -nodisplay -nodesktop -nojvm
-## CHECK IF THE RIGHT FS VERSION WAS LOADED:
-# which load_nifti
-## IF WRONG VERSION, ADD PATH FOR RIGHT VERSION:
-# addpath /autofs/cluster/freesurfer/centos6_x86_64/stable6/matlab/
-# cd /cluster/iaslab/FSMAP
-# run scripts/nuisance_regression_g2.m
+# Resolve script path
+MATALB_FILE="$STUDY_DIR/scripts/1.preprocessing/nuisance_regression.m"
+SCRIPTS_DIR=$(dirname "$MATLAB_SCRIPT")
+
+# Launch MATLAB
+matlab -nodisplay -nosplash -nojvm -r "\
+    cd('$SCRIPTS_DIR'); \
+    subj_name='$subj';\ 
+    DERIVATIVES_DIR='$STUDY_DIR/derivatives/';\ 
+    dirOUT=direIN;  
+    mot=load([ direIN 'fmcpr.mcdat']);
+    MOTION_PAR=mot(:,2:7); 
+    LAT_VENTRICLE=load([ direIN 'vcsf_lat_ventricle.dat']); 
+    INF_LAT_VENTRICLE=load([ direIN 'vcsf_inf_lat_ventricle.dat']);
+    CHOROID_PLEXUS=load([ direIN 'vcsf_choroid_plexus.dat']);	
+    THIRD_VENTRICLE=load([ direIN 'vcsf_3rd_ventricle.dat']);
+    FOURTH_VENTRICLE=load([ direIN 'vcsf_4th_ventricle.dat']);
+    AQUEDUCT=load([ direIN 'aqueduct.dat']);
+    WM=load([ direIN 'wm_mean.dat']);     
+    regressors=detrend([MOTION_PAR LAT_VENTRICLE INF_LAT_VENTRICLE CHOROID_PLEXUS THIRD_VENTRICLE FOURTH_VENTRICLE AQUEDUCT WM],'constant');  
+    filenameEPIin=[direIN 'f_st_mc.nii.gz'];
+    filenameEPIout=[direOUT 'f_st_mc_regout.nii.gz'];
+    regressOUT_regressors(filenameEPIin, regressors, filenameEPIout,'n');  
+    run('$MATLAB_FILE'); \
+    exit;"

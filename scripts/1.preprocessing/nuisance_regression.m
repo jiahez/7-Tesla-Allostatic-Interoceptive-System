@@ -1,0 +1,16 @@
+subj_name=subjs(i); 
+direIN=['/cluster/iaslab/FSMAP/' char(subj_name) '/rest' num2str(j) '/001/']; 
+direOUT=direIN;  
+mot=load([ direIN 'fmcpr.mcdat']);
+MOTION_PAR=mot(:,2:7); 
+LAT_VENTRICLE=load([ direIN 'vcsf_lat_ventricle.dat']); 
+INF_LAT_VENTRICLE=load([ direIN 'vcsf_inf_lat_ventricle.dat']);
+CHOROID_PLEXUS=load([ direIN 'vcsf_choroid_plexus.dat']);	
+THIRD_VENTRICLE=load([ direIN 'vcsf_3rd_ventricle.dat']);
+FOURTH_VENTRICLE=load([ direIN 'vcsf_4th_ventricle.dat']);
+AQUEDUCT=load([ direIN 'aqueduct.dat']);
+WM=load([ direIN 'wm_mean.dat']);     
+regressors=detrend([MOTION_PAR LAT_VENTRICLE INF_LAT_VENTRICLE CHOROID_PLEXUS THIRD_VENTRICLE FOURTH_VENTRICLE AQUEDUCT WM],'constant');  
+filenameEPIin=[direIN 'f_st_mc.nii.gz'];
+filenameEPIout=[direOUT 'f_st_mc_regout.nii.gz'];
+regressOUT_regressors(filenameEPIin, regressors, filenameEPIout,'n');  
