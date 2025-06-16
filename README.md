@@ -31,7 +31,10 @@ Scripts were tested and run on Linux system equipped with SLURM computing. Prere
 3. FSL
 4. Freesurfer 6.0.0 or later, and Freesurfer dev
 5. AFNI
+6. ANTS
+7. Brainstem Navigator: save folder to $STUDY_DIR/scripts
 
 To replicate the results in the manuscript using the scripts, please 
 1. Download raw BIDS data (sub-XXX) and participants.tsv into $STUDY_DIR/rawdata
 2. Download scripts into $STUDY_DIR/scripts
+3. Download mni152.fnirt folder into $SUBJECTS_DIR

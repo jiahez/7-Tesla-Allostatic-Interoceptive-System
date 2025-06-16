@@ -47,26 +47,13 @@ export TMPDIR=$DATA_DIR/tmpdir
 
 # Resolve script path
 MATALB_FILE="$STUDY_DIR/scripts/1.preprocessing/nuisance_regression.m"
-SCRIPTS_DIR=$(dirname "$MATLAB_SCRIPT")
+SCRIPTS_DIR=$(dirname "$MATLAB_FILE")
 
 # Launch MATLAB
 matlab -nodisplay -nosplash -nojvm -r "\
+    addpath($STUDY_DIR/scripts/1.preprocessing);\
     cd('$SCRIPTS_DIR'); \
     subj_name='$subj';\ 
-    DERIVATIVES_DIR='$STUDY_DIR/derivatives/';\ 
-    dirOUT=direIN;  
-    mot=load([ direIN 'fmcpr.mcdat']);
-    MOTION_PAR=mot(:,2:7); 
-    LAT_VENTRICLE=load([ direIN 'vcsf_lat_ventricle.dat']); 
-    INF_LAT_VENTRICLE=load([ direIN 'vcsf_inf_lat_ventricle.dat']);
-    CHOROID_PLEXUS=load([ direIN 'vcsf_choroid_plexus.dat']);	
-    THIRD_VENTRICLE=load([ direIN 'vcsf_3rd_ventricle.dat']);
-    FOURTH_VENTRICLE=load([ direIN 'vcsf_4th_ventricle.dat']);
-    AQUEDUCT=load([ direIN 'aqueduct.dat']);
-    WM=load([ direIN 'wm_mean.dat']);     
-    regressors=detrend([MOTION_PAR LAT_VENTRICLE INF_LAT_VENTRICLE CHOROID_PLEXUS THIRD_VENTRICLE FOURTH_VENTRICLE AQUEDUCT WM],'constant');  
-    filenameEPIin=[direIN 'f_st_mc.nii.gz'];
-    filenameEPIout=[direOUT 'f_st_mc_regout.nii.gz'];
-    regressOUT_regressors(filenameEPIin, regressors, filenameEPIout,'n');  
+    dirIN='$STUDY_DIR/derivatives/$subj/rest/001/';\ 
     run('$MATLAB_FILE'); \
     exit;"

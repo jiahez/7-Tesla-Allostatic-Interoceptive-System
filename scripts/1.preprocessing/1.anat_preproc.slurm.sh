@@ -30,7 +30,7 @@ echo "Processing subject: $subj"
 
 # Set up subject output directories
 deriv_subj_dir="$STUDY_DIR/derivatives/$subj"
-scripts_dir="$STUDY_DIR/derivatives/scripts"
+scripts_dir="$STUDY_DIR/scripts"
 anat_dir="$deriv_subj_dir/anat"
 func_dir="$deriv_subj_dir/func"
 mkdir -p "$anat_dir" "$func_dir"
@@ -42,7 +42,7 @@ fslreorient2std "$input_T1" "$reoriented_T1"
 
 # Step 2: Bias field correction
 bfc_T1="$anat_dir/${subj}_T1w_r_bfc.nii.gz"
-"$scripts_dir/1.preprocessing/run_bfc.sh" --i "$reoriented_T1" --o "$bfc_T1"
+"$scripts_dir/1.preprocessing/scripts/BrainstemNavigator1.0/Tutorial/run_bfc.sh" --i "$reoriented_T1" --o "$bfc_T1"
 
 # Step 3: Convert to .mgz and set up Freesurfer structure
 orig_dir="$SUBJECTS_DIR/$subj/mri/orig"
