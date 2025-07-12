@@ -34,24 +34,24 @@ mv $STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni152.fnirt.rh.nii.gz $STUDY
 mv $STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni305.1mm.nii.gz $STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni305.1mm_orig.nii.gz
 
 # extract nuisance regressors
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_lat_ventricle.config -overwrite 
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_inf_lat_ventricle.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_choroid_plexus.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_3rd_ventricle.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/vcsf_4th_ventricle.config -overwrite
-fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/config_files/wm_mean.config -overwrite
-fslmeants -i $subj/rest/001/fmcpr.nii.gz -o $subj/rest/001/aqueduct.dat -m $subj/aqueduct_mask_5vx.nii.gz
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/configs/vcsf_lat_ventricle.config -overwrite 
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/configs/vcsf_inf_lat_ventricle.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/configs/vcsf_choroid_plexus.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/configs/vcsf_3rd_ventricle.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/configs/vcsf_4th_ventricle.config -overwrite
+fcseed-sess -s $subj -cfg $STUDY_DIR/scripts/configs/wm_mean.config -overwrite
+fslmeants -i $$STUDY_DIR/derivatives/$subj/rest/001/fmcpr.nii.gz -o $STUDY_DIR/derivatives/$subj/rest/001/aqueduct.dat -m $STUDY_DIR/derivatives/$subj/aqueduct_mask_5vx.nii.gz
 
 # set temp directory
 export TMPDIR=$DATA_DIR/tmpdir
 
 # Resolve script path
-MATALB_FILE="$STUDY_DIR/scripts/1.preprocessing/nuisance_regression.m"
+MATALB_FILE="$STUDY_DIR/scripts/1.preprocessing/functions/nuisance_regression.m"
 SCRIPTS_DIR=$(dirname "$MATLAB_FILE")
 
 # Launch MATLAB
 matlab -nodisplay -nosplash -nojvm -r "\
-    addpath($STUDY_DIR/scripts/1.preprocessing);\
+    addpath(genpath($STUDY_DIR/scripts/1.preprocessing));\
     cd('$SCRIPTS_DIR'); \
     subj_name='$subj';\ 
     dirIN='$STUDY_DIR/derivatives/$subj/rest/001/';\ 

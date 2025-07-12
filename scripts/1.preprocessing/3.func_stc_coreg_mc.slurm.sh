@@ -28,7 +28,7 @@ for run in 1 2 3; do
     slicetimer \
         -i "$STUDY_DIR/derivatives/$subj/func/${subj}_task-rest_run-0${run}_bold_reorient.nii.gz" \
         -o "$STUDY_DIR/derivatives/$subj/func/${subj}_task-rest_run-0${run}_bold_reorient_st.nii.gz" \
-        --ocustom="scripts/1.preprocessing/sliceorder_123slsms3_asc_inter.txt" \
+        --ocustom="scripts/1.preprocessing/configs/sliceorder_123slsms3_asc_inter.txt" \
         -v -r "$TR"
 done
 
@@ -53,5 +53,7 @@ gunzip -f "$STUDY_DIR/derivatives/$subj/rest/001/f.nii.gz"
 # Motion correction using FreeSurfer's preproc-sess
 preproc-sess -s "$subj" -fsd rest -fwhm 0 -per-session -force
 
-# Compute std dev map
+# Compute standard deviation map
 fslmaths "$STUDY_DIR/derivatives/$subj/rest/001/fmcpr.nii.gz" -Tstd "$STUDY_DIR/derivatives/$subj/rest/001/fmcpr_STD.nii.gz"
+
+# Manually inspect the standardard deviation map to find top 5 voxels in the aqueduct and save it as a mask at $STUDY_DIR/derivatives/$subj/aqueduct_mask_5vx.nii.gz
