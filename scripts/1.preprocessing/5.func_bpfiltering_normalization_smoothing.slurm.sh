@@ -48,7 +48,12 @@ rm $STUDY_DIR/derivatives/$subj/rest/001/f_st_mc_regout_bp_m_2MNI_LIA.nii.gz
 rm $STUDY_DIR/derivatives/$subj/rest/001/f_st_mc_regout_bp_m_2MNI_LIA_crop.nii.gz
 
 # project to lh and rh surface
-foreach hemi (lh rh)
-	mri_vol2surf --src $STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni305.1mm.nii.gz --srcreg identity --ref T1.mgz --regheader mni152.fnirt --hemi $hemi --o $subj/rest/001/fmcpr.sm0.mni152.fnirt.${hemi}.nii.gz
-end
-
+for hemi in lh rh; do
+    mri_vol2surf \
+        --src "$STUDY_DIR/derivatives/$subj/rest/001/fmcpr.sm0.mni305.1mm.nii.gz" \
+        --srcreg identity \
+        --ref T1.mgz \
+        --regheader mni152.fnirt \
+        --hemi "$hemi" \
+        --o "$subj/rest/001/fmcpr.sm0.mni152.fnirt.${hemi}.nii.gz"
+done

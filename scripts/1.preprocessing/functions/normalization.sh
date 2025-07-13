@@ -25,8 +25,6 @@ filefMRI=$dirfMRI/f_st_mc_regout_bp
 fslmaths $filefMRI -mul ${dirT1}/${subj}_T1w_r_bfc_mask_fh.nii.gz ${filefMRI}_m
 
 # Applying the normalization transformations of fmri data from T1epispace to MNI152 space....
-# Split the 4D file in a series of 384 3D files, then run the normalization for each of them, finally create a 4D file again
-# This is because antsApplyTransforms -d 4 (4D) option gets killed or does not work
 moving=${filefMRI}_m
 mkdir ${dirfMRI}/temp_norm
 for index in {1..768} 
@@ -38,8 +36,7 @@ do
 	/cluster/pubsw/arch/CentOS5-x86-64/packages/ANTS/dev/bin/antsApplyTransforms -d 3 -e 0 -i ${moving3D}.nii.gz -r ${fixed} -o ${moving3D}_2_MNI152_T1_1mm_brain.nii.gz -t $dirTransformT12MNI/miepi_MPRAGE_FOR_FS_r_bfc_2_MNI152_T1_1mm_brain1Warp.nii.gz $dirTransformT12MNI/miepi_MPRAGE_FOR_FS_r_bfc_2_MNI152_T1_1mm_brain0GenericAffine.mat -v 1
 done
 
-# Then Merge the normalized files in a single 4D file --------------
-# (to check if all the timepoints have been normalized: ls *MNI152* | wc -w   ; this should give 384) 
+# (to check if all the timepoints have been normalized: ls *MNI152* | wc -w   ; this should give 768) 
 #---------------------------------------------------------
 fslmerge -t ${moving}_2_MNI152_T1_1mm_brain.nii.gz  ${dirfMRI}/temp_norm/*MNI152_T1_1mm_brain*
 # Remove the temp folder
