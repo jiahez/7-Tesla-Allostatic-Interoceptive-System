@@ -18,6 +18,14 @@ Raw and preprocessed data are available: https://openneuro.org/datasets/ds005747
 - Raw data are in BIDS format
 - Preprocessed data (in derivatives/preprocessed) are outputs of step 1.preprocessing
 
+Brief description of outputs
+1. connectivity maps
+    a. bootstrapped maps
+    b. t maps
+2. overlap maps
+Viewing instructions have details on how to visualize surface and volume maps.
+
+
 Brief description of scripts
 1. preprocessing: 
 2. first_level: 
