@@ -26,7 +26,7 @@ Brief description of outputs
     a. bootstrapped maps
     b. t maps
 2. overlap maps
-Viewing instructions have details on how to visualize surface and volume maps.
+Viewing instructions have details on how to visualize surface and volume maps. 
 
 
 Brief description of scripts
