@@ -1,0 +1,14 @@
+dirOUT=dirIN;  
+mot=load([ dirIN 'fmcpr.mcdat']);
+MOTION_PAR=mot(:,2:7); 
+LAT_VENTRICLE=load([ dirIN 'vcsf_lat_ventricle.dat']); 
+INF_LAT_VENTRICLE=load([ dirIN 'vcsf_inf_lat_ventricle.dat']);
+CHOROID_PLEXUS=load([ dirIN 'vcsf_choroid_plexus.dat']);	
+THIRD_VENTRICLE=load([ dirIN 'vcsf_3rd_ventricle.dat']);
+FOURTH_VENTRICLE=load([ dirIN 'vcsf_4th_ventricle.dat']);
+AQUEDUCT=load([ dirIN 'aqueduct.dat']);
+WM=load([ dirIN 'wm_mean.dat']);     
+regressors=detrend([MOTION_PAR LAT_VENTRICLE INF_LAT_VENTRICLE CHOROID_PLEXUS THIRD_VENTRICLE FOURTH_VENTRICLE AQUEDUCT WM],'constant');  
+filenameEPIin=[dirIN 'f_st_mc.nii.gz'];
+filenameEPIout=[dirOUT 'f_st_mc_regout.nii.gz'];
+regressOUT_regressors(filenameEPIin, regressors, filenameEPIout,'n');  
